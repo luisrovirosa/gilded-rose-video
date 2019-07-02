@@ -40,13 +40,17 @@ public class GildedRose {
             if (isAgedBrie(item)) {
                 increaseQuality(item);
             } else if (isBackstage(item)) {
-                item.quality = 0;
+                dropQualityToZero(item);
             } else if (isSulfuras(item)) {
 
             } else {
                 decreaseQuality(item);
             }
         }
+    }
+
+    private void dropQualityToZero(Item item) {
+        item.quality = 0;
     }
 
     private void decreaseQuality(Item item) {
