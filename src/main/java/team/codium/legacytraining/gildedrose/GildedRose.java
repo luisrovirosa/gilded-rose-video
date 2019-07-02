@@ -52,14 +52,14 @@ public class GildedRose {
                     item.quality = item.quality + 1;
                 }
             } else {
-                if (!isBackstage(item)) {
+                if (isBackstage(item)) {
+                    item.quality = 0;
+                } else {
                     if (item.quality > 0) {
                         if (!isSulfuras(item)) {
                             item.quality = item.quality - 1;
                         }
                     }
-                } else {
-                    item.quality = 0;
                 }
             }
         }
