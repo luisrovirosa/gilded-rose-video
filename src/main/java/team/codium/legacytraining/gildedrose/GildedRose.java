@@ -21,12 +21,16 @@ public class GildedRose {
         } else if (isSulfuras(item)) {
 
         } else {
-            decreaseQuality(item);
-            if (item.sellIn <= 0) {
-                decreaseQuality(item);
-            }
-            decreaseSellIn(item);
+            updateNormalItem(item);
         }
+    }
+
+    private void updateNormalItem(Item item) {
+        decreaseQuality(item);
+        if (item.sellIn <= 0) {
+            decreaseQuality(item);
+        }
+        decreaseSellIn(item);
     }
 
     private void updateBackstage(Item item) {
