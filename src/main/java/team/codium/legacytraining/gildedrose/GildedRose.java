@@ -35,10 +35,8 @@ public class GildedRose {
                 }
             }
         } else {
-            if (item.quality > 0) {
-                if (!isSulfuras(item)) {
-                    item.quality = item.quality - 1;
-                }
+            if (item.quality > 0 && !isSulfuras(item)) {
+                item.quality = item.quality - 1;
             }
         }
 
