@@ -1,6 +1,9 @@
 package team.codium.legacytraining.gildedrose;
 
 public class GildedRose {
+    public static final String AGED_BRIE = "Aged Brie";
+    public static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
+    public static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
     Item[] items;
 
     public GildedRose(Item[] items) {
@@ -15,13 +18,13 @@ public class GildedRose {
 
     private void update(Item item) {
         switch (item.name) {
-            case "Aged Brie":
+            case AGED_BRIE:
                 updateAgedBrie(item);
                 break;
-            case "Backstage passes to a TAFKAL80ETC concert":
+            case BACKSTAGE_PASSES:
                 updateBackstage(item);
                 break;
-            case "Sulfuras, Hand of Ragnaros":
+            case SULFURAS:
 
                 break;
             default:
