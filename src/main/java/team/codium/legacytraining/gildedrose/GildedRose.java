@@ -32,21 +32,19 @@ public class GildedRose {
             decreaseQuality(item);
         }
 
-        if (item.sellIn < 1) {
-            if (isAgedBrie(item)) {
-                if (item.sellIn < 1) {
-                    increaseQuality(item);
-                }
-            } else if (isBackstage(item)) {
-                if (item.sellIn < 1) {
-                    dropQualityToZero(item);
-                }
-            } else if (isSulfuras(item)) {
+        if (isAgedBrie(item)) {
+            if (item.sellIn < 1) {
+                increaseQuality(item);
+            }
+        } else if (isBackstage(item)) {
+            if (item.sellIn < 1) {
+                dropQualityToZero(item);
+            }
+        } else if (isSulfuras(item)) {
 
-            } else {
-                if (item.sellIn < 1) {
-                    decreaseQuality(item);
-                }
+        } else {
+            if (item.sellIn < 1) {
+                decreaseQuality(item);
             }
         }
 
