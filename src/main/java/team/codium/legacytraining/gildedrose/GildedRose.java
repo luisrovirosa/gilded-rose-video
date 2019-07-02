@@ -14,14 +14,7 @@ public class GildedRose {
 	}
 
 	private void update(Item item) {
-		if (!isAgedBrie(item)
-				&& !isBackstage(item)) {
-			if (item.quality > 0) {
-				if (!isSulfuras(item)) {
-					item.quality = item.quality - 1;
-				}
-			}
-		} else {
+		if (isAgedBrie(item) || isBackstage(item)) {
 			if (item.quality < 50) {
 				item.quality = item.quality + 1;
 
@@ -37,6 +30,12 @@ public class GildedRose {
 							item.quality = item.quality + 1;
 						}
 					}
+				}
+			}
+		} else {
+			if (item.quality > 0) {
+				if (!isSulfuras(item)) {
+					item.quality = item.quality - 1;
 				}
 			}
 		}
