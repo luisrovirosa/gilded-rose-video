@@ -51,15 +51,13 @@ public class GildedRose {
                 if (item.quality < 50) {
                     item.quality = item.quality + 1;
                 }
-            } else {
-                if (isBackstage(item)) {
-                    item.quality = 0;
-                } else if (isSulfuras(item)) {
+            } else if (isBackstage(item)) {
+                item.quality = 0;
+            } else if (isSulfuras(item)) {
 
-                } else {
-                    if (item.quality > 0) {
-                        item.quality = item.quality - 1;
-                    }
+            } else {
+                if (item.quality > 0) {
+                    item.quality = item.quality - 1;
                 }
             }
         }
