@@ -16,27 +16,27 @@ public class GildedRose {
     private void update(Item item) {
         if (isAgedBrie(item)) {
             increaseQuality(item);
-            if (item.sellIn < 1) {
+            if (item.sellIn <= 0) {
                 increaseQuality(item);
             }
         } else if (isBackstage(item)) {
             increaseQuality(item);
 
-            if (item.sellIn < 11) {
+            if (item.sellIn <= 10) {
                 increaseQuality(item);
             }
 
-            if (item.sellIn < 6) {
+            if (item.sellIn <= 5) {
                 increaseQuality(item);
             }
-            if (item.sellIn < 1) {
+            if (item.sellIn <= 0) {
                 dropQualityToZero(item);
             }
         } else if (isSulfuras(item)) {
 
         } else {
             decreaseQuality(item);
-            if (item.sellIn < 1) {
+            if (item.sellIn <= 0) {
                 decreaseQuality(item);
             }
         }
