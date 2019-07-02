@@ -41,13 +41,6 @@ public class GildedRose {
             }
         }
 
-        if (isAgedBrie(item)) {
-        } else if (isBackstage(item)) {
-        } else if (isSulfuras(item)) {
-
-        } else {
-        }
-
         if (!isSulfuras(item)) {
             decreaseSellIn(item);
         }
