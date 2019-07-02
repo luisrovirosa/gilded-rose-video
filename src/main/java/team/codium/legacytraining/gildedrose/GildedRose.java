@@ -14,11 +14,11 @@ public class GildedRose {
     }
 
     private void update(Item item) {
-        if (isAgedBrie(item)) {
+        if (item.name.equals("Aged Brie")) {
             updateAgedBrie(item);
-        } else if (isBackstage(item)) {
+        } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             updateBackstage(item);
-        } else if (isSulfuras(item)) {
+        } else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
 
         } else {
             updateNormalItem(item);
@@ -77,15 +77,4 @@ public class GildedRose {
         }
     }
 
-    private boolean isSulfuras(Item item) {
-        return item.name.equals("Sulfuras, Hand of Ragnaros");
-    }
-
-    private boolean isBackstage(Item item) {
-        return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
-    }
-
-    private boolean isAgedBrie(Item item) {
-        return item.name.equals("Aged Brie");
-    }
 }
