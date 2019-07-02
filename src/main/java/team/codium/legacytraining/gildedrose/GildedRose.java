@@ -34,13 +34,19 @@ public class GildedRose {
 
         if (item.sellIn < 1) {
             if (isAgedBrie(item)) {
-                increaseQuality(item);
+                if (item.sellIn < 1) {
+                    increaseQuality(item);
+                }
             } else if (isBackstage(item)) {
-                dropQualityToZero(item);
+                if (item.sellIn < 1) {
+                    dropQualityToZero(item);
+                }
             } else if (isSulfuras(item)) {
 
             } else {
-                decreaseQuality(item);
+                if (item.sellIn < 1) {
+                    decreaseQuality(item);
+                }
             }
         }
 
