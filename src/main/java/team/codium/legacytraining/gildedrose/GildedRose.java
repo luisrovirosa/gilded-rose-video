@@ -55,7 +55,7 @@ public class GildedRose {
                 if (isBackstage(item)) {
                     item.quality = 0;
                 } else {
-                    if (item.quality > 0 && !isSulfuras(item)) {
+                    if (!isSulfuras(item) && item.quality > 0) {
                         item.quality = item.quality - 1;
                     }
                 }
