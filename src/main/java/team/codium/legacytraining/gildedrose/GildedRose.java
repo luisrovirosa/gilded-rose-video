@@ -29,9 +29,7 @@ public class GildedRose {
         } else if (isSulfuras(item)) {
 
         } else {
-            if (item.quality > 0) {
-                item.quality = item.quality - 1;
-            }
+            decreaseQuality(item);
         }
 
         if (!isSulfuras(item)) {
@@ -46,10 +44,14 @@ public class GildedRose {
             } else if (isSulfuras(item)) {
 
             } else {
-                if (item.quality > 0) {
-                    item.quality = item.quality - 1;
-                }
+                decreaseQuality(item);
             }
+        }
+    }
+
+    private void decreaseQuality(Item item) {
+        if (item.quality > 0) {
+            item.quality = item.quality - 1;
         }
     }
 
