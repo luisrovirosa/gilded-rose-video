@@ -47,7 +47,11 @@ public class GildedRose {
         }
 
         if (item.sellIn < 0) {
-            if (!isAgedBrie(item)) {
+            if (isAgedBrie(item)) {
+                if (item.quality < 50) {
+                    item.quality = item.quality + 1;
+                }
+            } else {
                 if (!isBackstage(item)) {
                     if (item.quality > 0) {
                         if (!isSulfuras(item)) {
@@ -56,10 +60,6 @@ public class GildedRose {
                     }
                 } else {
                     item.quality = 0;
-                }
-            } else {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
                 }
             }
         }
