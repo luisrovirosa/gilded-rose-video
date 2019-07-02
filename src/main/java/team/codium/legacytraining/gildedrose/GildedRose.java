@@ -33,10 +33,10 @@ public class GildedRose {
         }
     }
 
-    private void updateNormalItem(Item item) {
-        decreaseQuality(item);
+    private void updateAgedBrie(Item item) {
+        increaseQuality(item);
         if (item.sellIn <= 0) {
-            decreaseQuality(item);
+            increaseQuality(item);
         }
         decreaseSellIn(item);
     }
@@ -57,20 +57,18 @@ public class GildedRose {
         decreaseSellIn(item);
     }
 
-    private void updateAgedBrie(Item item) {
-        increaseQuality(item);
+    private void updateNormalItem(Item item) {
+        decreaseQuality(item);
         if (item.sellIn <= 0) {
-            increaseQuality(item);
+            decreaseQuality(item);
         }
         decreaseSellIn(item);
     }
 
-    private void decreaseSellIn(Item item) {
-        item.sellIn = item.sellIn - 1;
-    }
-
-    private void dropQualityToZero(Item item) {
-        item.quality = 0;
+    private void increaseQuality(Item item) {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1;
+        }
     }
 
     private void decreaseQuality(Item item) {
@@ -79,10 +77,12 @@ public class GildedRose {
         }
     }
 
-    private void increaseQuality(Item item) {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
-        }
+    private void decreaseSellIn(Item item) {
+        item.sellIn = item.sellIn - 1;
+    }
+
+    private void dropQualityToZero(Item item) {
+        item.quality = 0;
     }
 
 }
