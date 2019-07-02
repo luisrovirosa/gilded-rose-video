@@ -17,19 +17,7 @@ public class GildedRose {
         if (isAgedBrie(item)) {
             updateAgedBrie(item);
         } else if (isBackstage(item)) {
-            increaseQuality(item);
-
-            if (item.sellIn <= 10) {
-                increaseQuality(item);
-            }
-
-            if (item.sellIn <= 5) {
-                increaseQuality(item);
-            }
-            if (item.sellIn <= 0) {
-                dropQualityToZero(item);
-            }
-            decreaseSellIn(item);
+            updateBackstage(item);
         } else if (isSulfuras(item)) {
 
         } else {
@@ -39,6 +27,22 @@ public class GildedRose {
             }
             decreaseSellIn(item);
         }
+    }
+
+    private void updateBackstage(Item item) {
+        increaseQuality(item);
+
+        if (item.sellIn <= 10) {
+            increaseQuality(item);
+        }
+
+        if (item.sellIn <= 5) {
+            increaseQuality(item);
+        }
+        if (item.sellIn <= 0) {
+            dropQualityToZero(item);
+        }
+        decreaseSellIn(item);
     }
 
     private void updateAgedBrie(Item item) {
